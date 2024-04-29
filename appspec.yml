@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/html/mrinal/
+    permissions: "755"
+    owner: root
+    group: root
+file_exists_behavior: OVERWRITE
+hooks:
+  AfterInstall:
+    - location: scripts/after-install.sh
+      timeout: 300
+      runas: root
